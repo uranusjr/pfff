@@ -1,0 +1,55 @@
+[build-system]
+requires = ['flit']
+build-backend = 'flit.buildapi'
+
+[tool.flit.metadata]
+module = 'pfff'
+author = 'Tzu-ping Chung'
+author-email = 'uranusjr@gmail.com'
+home-page = 'https://github.com/uranusjr/pfff'
+requires = [
+    'flit (~=1.0)',
+    'requirementslib',
+]
+requires-python = '>=3.5'
+description-file = 'README.rst'
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: ISC License (ISCL)',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+]
+
+[tool.towncrier]
+package = 'pfff'
+package_dir = 'src'
+filename = 'CHANGELOG.rst'
+directory = 'news/'
+title_format = '{version} ({project_date})'
+issue_format = '`#{issue} <https://github.com/uranusjr/pfff/issues/{issue}>`_'
+template = 'tasks/CHANGELOG.rst.jinja2'
+
+[[tool.towncrier.type]]
+directory = 'feature'
+name = 'Features'
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = 'bugfix'
+name = 'Bug Fixes'
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = 'trivial'
+name = 'Trivial Changes'
+showcontent = false
+
+[[tool.towncrier.type]]
+directory = 'removal'
+name = 'Removals and Deprecations'
+showcontent = true
